@@ -14,7 +14,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(router);
 
-
 const PORT = process.env.PORT || 8000;
 
 //for deploy
@@ -25,6 +24,4 @@ if ((process.env.NODE_ENV = "production")) {
         res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
     });
 }
-
-
 app.listen(PORT, () => console.log(`Server running at ${PORT}`));

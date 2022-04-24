@@ -140,7 +140,7 @@ export default class Dashboard extends Component {
                     <header className='col'>Blog</header>
                 </div>
                 <div className="row">
-                    <section className='col-4 left-section'>
+                    <section className='col-sm-4 left-section'>
                         <h3 style={{ margin: "20px 0px" }}>🌟Create a Blog Post🌟</h3>
                         <form className='blog-form'>
                             <input autoComplete='off' type="text" placeholder='🔥Blog Title' name='title' value={this.state.title} onChange={this.handler} />
@@ -151,7 +151,7 @@ export default class Dashboard extends Component {
                             <button onClick={() => this.addPost()}>Publish 📝</button>
                         </form>
                     </section>
-                    <section className='col-8 right-section'>
+                    <section className='col-sm-8 right-section'>
                         {this.state.allBlog.map(posts => {
                             let date1 = new Date(posts.createdAt);
                             let date2 = new Date();
