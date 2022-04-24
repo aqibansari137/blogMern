@@ -4,7 +4,7 @@ const Blog = require('../modal/blog');
 const router = express.Router();
 
 
-router.get("/", async (req, res) => {
+router.get("/get", async (req, res) => {
     try {
         const data = await Blog.find();
         if (data) {
@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
 });
 
 
-router.post("/", async (req, res) => {
+router.post("/add", async (req, res) => {
     try {
         const newBlog = await new Blog({
             title: req.body.title,
@@ -34,7 +34,7 @@ router.post("/", async (req, res) => {
 });
 
 
-router.get("/:id", async (req, res) => {
+router.get("/get/:id", async (req, res) => {
     const id = req.params.id;
     try {
         const data = await Blog.findById(id)
@@ -47,7 +47,7 @@ router.get("/:id", async (req, res) => {
 });
 
 
-router.patch("/:id", async (req, res) => {
+router.patch("/update/:id", async (req, res) => {
     const id = req.params.id;
     try {
         const data = await Blog.findById(id)
@@ -67,7 +67,7 @@ router.patch("/:id", async (req, res) => {
     }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/delete/:id", async (req, res) => {
     const id = req.params.id;
     try {
         const data = await Blog.findById(id)
@@ -81,7 +81,7 @@ router.delete("/:id", async (req, res) => {
     }
 });
 
-router.patch("/:id/likedBlogPost", async (req, res) => {
+router.patch("/update/:id/likedBlogPost", async (req, res) => {
     const id = req.params.id;
     try {
         const data = await Blog.findById(id)

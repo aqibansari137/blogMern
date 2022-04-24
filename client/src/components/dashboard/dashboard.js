@@ -29,7 +29,7 @@ export default class Dashboard extends Component {
 
     getAllPost = async () => {
         try {
-            const data = await fetch(`/`);
+            const data = await fetch(`/get`);
             if (data.status === 200) {
                 const resp = await data.json()
                 this.setState({
@@ -43,7 +43,7 @@ export default class Dashboard extends Component {
     }
     deletePost = async (id) => {
         try {
-            const data = await fetch(`/${id}`, {
+            const data = await fetch(`/delete/${id}`, {
                 method: 'delete',
                 headers: { "Content-Type": "application/json" }
             })
@@ -59,7 +59,7 @@ export default class Dashboard extends Component {
         try {
             let { title, description, creator, tags } = this.state;
             tags = tags.split(",");
-            const data = await fetch(`/`, {
+            const data = await fetch(`/add`, {
                 method: 'post',
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ title, description, creator, tags })
@@ -76,7 +76,7 @@ export default class Dashboard extends Component {
         try {
             let { title, description, creator, tags, upvote } = this.state.updateForm;
             tags = tags.split(",");
-            const data = await fetch(`/${id}`, {
+            const data = await fetch(`/update/${id}`, {
                 method: 'PATCH',
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ title, description, creator, tags, upvote })
@@ -94,7 +94,7 @@ export default class Dashboard extends Component {
     }
     upVote = async (id) => {
         try {
-            const data = await fetch(`/${id}/likedBlogPost`, {
+            const data = await fetch(`/update/${id}/likedBlogPost`, {
                 method: 'PATCH',
                 headers: { "Content-Type": "application/json" }
             })
