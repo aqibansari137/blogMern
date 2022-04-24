@@ -14,11 +14,11 @@ if ((process.env.NODE_ENV = "production")) {
         res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
     });
 }
+dotenv.config();
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-dotenv.config();
 app.use(router);
 
 
