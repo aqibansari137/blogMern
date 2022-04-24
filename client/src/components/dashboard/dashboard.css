@@ -1,0 +1,127 @@
+
+header {
+    padding: 6px 0;
+    font-weight: 600;
+    border: 1px solid black; 
+    height: 10vh;
+    text-align: center;
+    font-size: 25px;
+    /* background: linear-gradient(to right, #200122, #6f0000); */
+    background-color: #350d0d;
+}
+
+.left-section {
+
+    border: 1px solid black; 
+    overflow: auto;
+    height: 82vh;
+    padding: 0 20px;
+    text-align: center;
+
+}
+.blog-form{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    row-gap: 5px;
+    z-index: 1;
+}
+.blog-form input::placeholder,textarea::placeholder{
+    color: white;
+}
+.blog-form input,textarea {
+    background: linear-gradient(to right, #304352, #d7d2cc);
+    padding: 5px 5px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    color: white;
+}
+.post input::placeholder {color: white;}
+.post input {
+    background: linear-gradient(to right, #61585e, #be5869);
+    padding: 5px 5px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    color: white;
+}
+/* .blog-form button:hover{
+    color: lightgray;
+    background: linear-gradient(to right, #6a150b, #1c1916);
+
+} */
+.tags{
+    box-shadow: 0 0 5px 0 #7f88da;
+    border-radius: 10px;
+    padding: 2px 9px;
+    background: #c33764;
+    margin: 0 5px;
+
+}
+/* .blog-form button{
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to right, #8e0e00, #1f1c18);
+    color: white;
+    padding: 5px 0;
+} */
+
+.right-section {
+    
+    border: 1px solid black; 
+    overflow: auto;
+    height:82vh;
+}
+.post{
+    margin: 10px 8px 0 1px;
+    border: 1px solid;
+    padding: 7px;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 0 3px 0;
+    background: linear-gradient(to right, #c33764, #1d2671);
+    color: white;
+    text-shadow: 2px 2px 2px #77213c;
+}
+.post button{
+border: none;
+background: none;
+color: white;
+}
+
+.author{
+text-transform: capitalize;
+}
+
+.vote:hover{
+    color: lightgray;
+    text-shadow: 2px 2px 2px #691d35;
+}
+
+footer {
+    height: 5vh;
+    border: 1px solid black; 
+    text-align: center;
+
+}
+
+.blog-form button {
+    background-image: linear-gradient(to right, #C04848 0%, #480048 51%, #C04848 100%)
+}
+
+.blog-form button {
+    padding: 5px 0;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+    display: block;
+}
+
+.blog-form button:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
