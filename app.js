@@ -6,16 +6,7 @@ const router = require('./router/router')
 
 const app = express();
 connectDb;
-
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-dotenv.config();
 //for deploy
-
-
-const PORT = process.env.PORT || 8000;
-
 if ((process.env.NODE_ENV = "production")) {
     app.use(express.static("client/build"));
     const path = require("path");
@@ -24,6 +15,16 @@ if ((process.env.NODE_ENV = "production")) {
     });
 }
 
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+dotenv.config();
 app.use(router);
+
+
+const PORT = process.env.PORT || 8000;
+
+
+
 
 app.listen(PORT, () => console.log(`Server running at ${PORT}`));
