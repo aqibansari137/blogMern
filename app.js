@@ -10,7 +10,6 @@ connectDb;
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(router);
 dotenv.config();
 //for deploy
 
@@ -25,5 +24,6 @@ if ((process.env.NODE_ENV = "production")) {
     });
 }
 
+app.use(router);
 
 app.listen(PORT, () => console.log(`Server running at ${PORT}`));
