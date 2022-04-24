@@ -3,7 +3,7 @@ const Blog = require('../modal/blog');
 
 const router = express.Router();
 
-
+//get method
 router.get("/get", async (req, res) => {
     try {
         const data = await Blog.find();
@@ -16,7 +16,7 @@ router.get("/get", async (req, res) => {
     }
 });
 
-
+//post method
 router.post("/add", async (req, res) => {
     try {
         const newBlog = await new Blog({

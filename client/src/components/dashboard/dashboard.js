@@ -60,7 +60,7 @@ export default class Dashboard extends Component {
             let { title, description, creator, tags } = this.state;
             tags = tags.split(",");
             const data = await fetch(`/add`, {
-                method: 'post',
+                method: 'POST',
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ title, description, creator, tags })
             })
@@ -143,8 +143,6 @@ export default class Dashboard extends Component {
                     <section className='col-4 left-section'>
                         <h3 style={{ margin: "20px 0px" }}>🌟Create a Blog Post🌟</h3>
                         <form className='blog-form'>
-                            {/* <label>Upload Blog Image</label>
-                            <button>Choose File</button> */}
                             <input autoComplete='off' type="text" placeholder='🔥Blog Title' name='title' value={this.state.title} onChange={this.handler} />
                             <textarea type="text" rows="7" placeholder='📔Blog Description' name="description" value={this.state.description} onChange={this.handler} />
                             <input autoComplete='off' type="text" placeholder='✍️Author Name' name="creator" value={this.state.creator} onChange={this.handler} />
@@ -203,14 +201,10 @@ export default class Dashboard extends Component {
                                 </div>
                             </div>
                         })}
-
-
                     </section>
-
                 </div>
                 <div className="row">
                     <footer className='col'>Created by @aqib 2022</footer>
-
                 </div>
             </div>
         )
